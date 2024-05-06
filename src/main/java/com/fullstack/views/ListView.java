@@ -12,6 +12,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
 import java.awt.*;
+import java.util.Collections;
 
 @PageTitle("Students")
 @Route("")
@@ -19,13 +20,34 @@ public class ListView extends VerticalLayout {
 
     Grid<Student> grid = new Grid<>(Student.class);
     TextField searchText = new TextField();
+    FormView form ;
+
     public ListView() {
 
         addClassName("list");
         setSizeFull();
 
         GridConf();
-        add(SearchBar(),grid);
+        FormConf();
+        add(SearchBar(),contentConf());
+    }
+
+    private Component contentConf() {
+
+        HorizontalLayout content = new HorizontalLayout(form,grid);
+
+        content.setFlexGrow(2,grid);// takes 2 thirds of space
+        content.setFlexGrow(1,grid);
+
+
+        content.setClassName("content");
+        content.setSizeFull();
+        return  content;
+    }
+
+    private void FormConf() {
+        form = new FormView(Collections.emptyList());
+        form.setWidth("300px");
     }
 
     private void GridConf(){
