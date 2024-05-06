@@ -1,4 +1,4 @@
-package com.fullstack.backend;
+package com.fullstack.backend.entities;
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;

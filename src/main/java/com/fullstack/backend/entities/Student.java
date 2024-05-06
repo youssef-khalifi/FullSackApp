@@ -1,4 +1,4 @@
-package com.fullstack.backend;
+package com.fullstack.backend.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
