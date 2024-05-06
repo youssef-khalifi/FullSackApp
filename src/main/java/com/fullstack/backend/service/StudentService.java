@@ -9,5 +9,6 @@ public interface StudentService {
     Student save(Student student);
     Student update(Student student);
     void delete(Student student);
-    List<Student> findAll();
+    long countStudents();
+    List<Student> findAll(String filter);
 }
